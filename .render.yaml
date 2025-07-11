@@ -1,0 +1,7 @@
+services:
+  - type: web
+    name: ca-extractor
+    env: docker
+    plan: free
+    dockerfilePath: Dockerfile
+    autoDeploy: true
