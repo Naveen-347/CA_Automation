@@ -35,7 +35,7 @@ def fetch_company_details(company_name, cin):
     try:
         resp = requests.get(url, headers=headers, timeout=10)
         if resp.status_code != 200:
-            return dict(url=url, email="Error", activity="Error", pan="Error", gst="Error")
+            return dict(url=url, email=resp.status_code, activity="Error", pan="Error", gst="Error")
         soup = BeautifulSoup(resp.text, 'html.parser')
         email = activity = pan = gst = "Not mentioned"
         for dt in soup.find_all("dt"):
